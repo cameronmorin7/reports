@@ -16,7 +16,7 @@ p { max-width: 30rem; padding: 24px; text-align: center; }</style></head>
   if (!k) { say.textContent = 'This link is incomplete. The document opens only with the whole link, as it was sent.'; return; }
   try {
     var key = await crypto.subtle.importKey('raw', bytes(k), 'AES-GCM', false, ['decrypt']);
-    var got = await fetch('data.bin?v=da700731c194', { cache: 'no-store' });
+    var got = await fetch('data.bin?v=7f040ae58235', { cache: 'no-store' });
     if (!got.ok) throw new Error('not there');
     var all = new Uint8Array(await got.arrayBuffer());
     var page = new TextDecoder('utf-8').decode(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: all.slice(0, 12) }, key, all.slice(12)));
